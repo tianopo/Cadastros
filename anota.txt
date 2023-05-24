@@ -1,0 +1,20 @@
+material UI
+menuLateral.tsx
+
+<Drawer variant='permanent'> = sempre está aberto
+<Drawer variant='persistent'> = algo mais dinamico, expande o menu
+<Drawer variant='temporary'> = menu fica sobre as coisas
+<Box> = funciona como uma div
+
+breakpoints = tamanhos definidos de tela, ajuda na responsividade
+ ex: sm, small: 600px --- md, medium: 900px
+const theme = useTheme()
+
+useMediaQuery('min-width:600px')||useMediaQuery('theme.breakpoints.up('sm'));
+theme.breakpoints.down('sm') = tiver menos que sm, retorna true
+theme.breakpoints.keys('sm') = todos os breakpoints disponiveis
+theme.breakpoints.not('sm') = se não for sm, retorna true
+theme.breakpoints.only('sm') = retorna true se for sm
+theme.breakpoints.up('sm') = retorna true se for maior que sm
+theme.breakpoints.value('sm') = retorna os valores, agora retorna 600
+theme.breakpoints.between('sm', 'md') = retorna true quando estiver entre
