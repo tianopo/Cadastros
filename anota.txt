@@ -18,3 +18,24 @@ theme.breakpoints.only('sm') = retorna true se for sm
 theme.breakpoints.up('sm') = retorna true se for maior que sm
 theme.breakpoints.value('sm') = retorna os valores, agora retorna 600
 theme.breakpoints.between('sm', 'md') = retorna true quando estiver entre
+
+useNavigate() = react router dom, navega para outras páginas
+useCallback() = faz a aplicação todas ser renderizada
+
+onClick?.() = se a função for true, ela é executada
+const resolvedPath = useResolvedPath(to) = 
+ configuração de rota do menu lateral do react-router-dom
+const match = useMatch({ path: resolvedPath.pathname, end: false}) =
+ configura a ida para a rota;
+selected={} = coloca seleção no menu
+
+routes/index.tsx
+
+useEffect = garante ser executado só uma vez após a renderização
+usado para ação de clique, fetchs.
+
+layout
+gap={1} -> distancia do material UI de 1x4px
+typography = configura diferentes tipos de textos
+whiteSpace="nowrap" -> não quebra novas linhas
+textOverflow="ellipsis" -> aparece ... se o texto tiver muito grande
