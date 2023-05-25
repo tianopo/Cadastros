@@ -52,3 +52,8 @@ coloque ?. para impor a condição 'apenas se não for undefined'
 então uma interface eu crio os componentes, o export const BarraDeFerra
 mentas: React.FC<IBarraDeFerramentas> pega seus valores como uma função
 e depois coloca no return
+
+./ferramentasDeDetalhe
+
+skeleton = usado para fornecer uma representação visual enquanto estão
+sendo carregados em forma geométrica. EX: facebook carregando
