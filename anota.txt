@@ -34,8 +34,21 @@ routes/index.tsx
 useEffect = garante ser executado só uma vez após a renderização
 usado para ação de clique, fetchs.
 
-layout
+./layout
 gap={1} -> distancia do material UI de 1x4px
 typography = configura diferentes tipos de textos
 whiteSpace="nowrap" -> não quebra novas linhas
 textOverflow="ellipsis" -> aparece ... se o texto tiver muito grande
+
+/.BarraDeferramentas
+Box pode assumir as propriedades do Paper, paper também aponta p/ o Box
+const theme = useTheme();
+<Box height={theme.spacing(4)} = define os espaços em valores de acordo
+com o tema escolhido
+
+(e) => aoMudarTextoDeBusca?.(e.target.value) = se a função da undefined,
+coloque ?. para impor a condição 'apenas se não for undefined'
+
+então uma interface eu crio os componentes, o export const BarraDeFerra
+mentas: React.FC<IBarraDeFerramentas> pega seus valores como uma função
+e depois coloca no return
