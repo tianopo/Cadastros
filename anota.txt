@@ -57,3 +57,6 @@ e depois coloca no return
 
 skeleton = usado para fornecer uma representação visual enquanto estão
 sendo carregados em forma geométrica. EX: facebook carregando
+
+para botões fazer uma interface booleana de visibilidade de cada botão e
+o clique de evento
