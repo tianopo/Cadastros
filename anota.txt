@@ -39,6 +39,7 @@ gap={1} -> distancia do material UI de 1x4px
 typography = configura diferentes tipos de textos
 whiteSpace="nowrap" -> não quebra novas linhas
 textOverflow="ellipsis" -> aparece ... se o texto tiver muito grande
+Overflow="hidden" = impede que apareça barra de scroll
 
 /.BarraDeferramentas
 Box pode assumir as propriedades do Paper, paper também aponta p/ o Box
@@ -60,3 +61,5 @@ sendo carregados em forma geométrica. EX: facebook carregando
 
 para botões fazer uma interface booleana de visibilidade de cada botão e
 o clique de evento
+
+dropDown == splitButton
