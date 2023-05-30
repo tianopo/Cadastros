@@ -98,3 +98,8 @@ métodos HTTP:
  post = consegue enviar dados para o backend
  put = atualiza os dados
  delete = exclui os dados
+
+useSearchParams() = hook do react-router-dom para pesquisa no input
+
+searchParams.get('busca') ?? ''
+?? = caso venha null, colocar a string vazia
