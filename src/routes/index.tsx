@@ -3,7 +3,7 @@ import { useDrawerContext } from '../shared/contexts';
 import { useEffect } from 'react';
 import { 
   Dashboard,
-  ListagemDeCidade 
+  ListagemDePessoas 
 } from '../pages';
 
 export const AppRoutes = () => {
@@ -17,9 +17,9 @@ export const AppRoutes = () => {
         label: 'Página Inicial',
       },
       {
-        icon: 'location_city',
-        path: '/cidades',
-        label: 'Cidades',
+        icon: 'people',
+        path: '/pessoas',
+        label: 'Pessoas',
       },
     ]);
   }, []);
@@ -28,8 +28,8 @@ export const AppRoutes = () => {
     <Routes>
       <Route path="/pagina-inicial" element={<Dashboard />} />
 
-      <Route path="/cidades" element={<ListagemDeCidade />} />
-      {/* <Route path="/cidades/detalhe/:id" element={<Dashboard />} /> */}
+      <Route path="/pessoas" element={<ListagemDePessoas />} />
+      {/* <Route path="/pessoas/detalhe/:id" element={<Dashboard />} /> */}
 
 
       <Route path="*" element={<Navigate to="/pagina-inicial" />} />
