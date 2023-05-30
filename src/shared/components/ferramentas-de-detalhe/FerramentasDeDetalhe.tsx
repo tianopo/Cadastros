@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Button, ButtonGroup, Divider, Icon, Paper, Skeleton, Theme, Typography, useMediaQuery, useTheme } from '@mui/material';
+import { Box, Button, Divider, Icon, Paper, Skeleton, Theme, Typography, useMediaQuery, useTheme } from '@mui/material';
 
 interface IFerramentasDeDetalheProps {
   textoBotaoNovo?: string;
@@ -85,7 +85,7 @@ export const FerramentasDeDetalhe: React.FC<IFerramentasDeDetalheProps> = ({
           startIcon={<Icon>save</Icon>}
         >
           <Typography variant='button' whiteSpace='nowrap' textOverflow="ellipsis" overflow="hidden">
-            Salvar e Voltar
+            Salvar e Fechar
           </Typography>
         </Button>
       )}

@@ -77,4 +77,24 @@ axios
 interceptor = se deu erro(401), redireciona para uma página, uma função
 
 /** */ = comentário para documentar o código
-defina um nome para o contexto de uso
+defina um nome para o contexto de uso.
+
+environment= Colocar valores que se repetem muito em diferentes partes
+do código
+
+services= faz a consulta do backend
+
+const { data } = await Api.get('/pessoas?_page=1&_limit=10'); =
+ faz com que a página apareça 10 registros
+
+operators = simula uma consulta no banco de dados SQL como um titulo
+ ex: GET /posts?title_like=server
+
+slice = toda listagem traz uma quantidade total de registros no banco
+de dados
+
+métodos HTTP:
+ get = obtém os dados
+ post = consegue enviar dados para o backend
+ put = atualiza os dados
+ delete = exclui os dados
