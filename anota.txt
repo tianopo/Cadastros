@@ -31,7 +31,7 @@ selected={} = coloca seleção no menu
 
 routes/index.tsx
 
-useEffect = garante ser executado só uma vez após a renderização
+useEffect = garante ser executado só uma vez após a re-renderização
 usado para ação de clique, fetchs.
 
 ./layout
@@ -63,3 +63,18 @@ para botões fazer uma interface booleana de visibilidade de cada botão e
 o clique de evento
 
 dropDown == splitButton
+
+json-server = cria arquivo JSON com registros e transforma em uma API
+devDependencies = sempre que instalar o pacote já instala as dependencias
+do JSON server e não vai para a produção quando faz o build
+-w = é o watch, sempre roda
+-p 3333 = é a porta padrão
+
+axios
+ a url base(antes do '/'), sempre se repete nas requisições
+ configurações padrões de header, https, autenticação
+
+interceptor = se deu erro(401), redireciona para uma página, uma função
+
+/** */ = comentário para documentar o código
+defina um nome para o contexto de uso
