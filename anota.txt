@@ -116,6 +116,9 @@ código sempre que é modificado, enquanto [] é executado apenas uma vez
 separar os imports de arquivos internos e externos. react é primeiro.
 Imports internos do maior para o menor para melhor organização visual
 
+para testar conexões lentas no devtools > network > no throttling > 
+custom Add... > Add custom Profile and then no throttling > custom...
+
 ./UseDeBounce
 setTimeout() = dá um atraso para a ação que pode acontecer
 

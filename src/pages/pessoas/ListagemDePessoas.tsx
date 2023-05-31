@@ -1,12 +1,12 @@
 import { useEffect, useMemo, useState } from 'react';
-import { TableContainer, Table, TableHead, TableBody, TableRow, TableCell, Paper } from '@mui/material';
+import { TableContainer, Table, TableHead, TableBody, TableRow, TableCell, Paper, TableFooter, LinearProgress } from '@mui/material';
 import { useSearchParams } from 'react-router-dom';
 
 import { IListagemPessoa, PessoasService } from '../../shared/services/api/pessoas/PessoasService';
 import { FerramentasDaListagem } from '../../shared/components';
 import { LayoutBaseDePagina } from '../../shared/layouts';
 import { useDeBounce } from '../../shared/hooks';
-
+import { Environment } from '../../shared/environment';
 
 export const ListagemDePessoas: React.FC = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -21,12 +21,12 @@ export const ListagemDePessoas: React.FC = () => {
   }, [searchParams]);
 
   useEffect(() => {
-    setIsLoading(false);
+    setIsLoading(true);
 
     debounce(() => {
       PessoasService.getAll(1, busca)
         .then((result) => {
-          setIsLoading(true);
+          setIsLoading(false);
           if (result instanceof Error) {
             alert(result.message);
           } else {
@@ -52,7 +52,7 @@ export const ListagemDePessoas: React.FC = () => {
           aoMudarTextoDeBusca={texto => setSearchParams({ busca: texto }, { replace: true })}
         />
       }>
-      <TableContainer component ={Paper} variant='outlined' sx={{ m: 1, width: 'auto' }}>
+      <TableContainer component={Paper} variant='outlined' sx={{ m: 1, width: 'auto' }}>
         <Table>
           <TableHead>
             <TableRow>
@@ -63,7 +63,7 @@ export const ListagemDePessoas: React.FC = () => {
           </TableHead>
           <TableBody>
             {rows.map(row => {
-              return(
+              return (
                 <TableRow key={row.id}>
                   <TableCell>Ações</TableCell>
                   <TableCell>{row.nomeCompleto}</TableCell>
@@ -71,8 +71,19 @@ export const ListagemDePessoas: React.FC = () => {
                 </TableRow>
               );
             })}
-
           </TableBody>
+          {totalCount === 0 && !isLoading &&(
+            <caption>{Environment.LISTAGEM_VAZIA}</caption>
+          )}
+          <TableFooter>
+            {isLoading && (
+              <TableRow>
+                <TableCell colSpan={3}>
+                  <LinearProgress variant='indeterminate' />
+                </TableCell>
+              </TableRow>
+            )}
+          </TableFooter>
         </Table>
       </TableContainer>
     </LayoutBaseDePagina>
