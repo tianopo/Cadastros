@@ -99,7 +99,29 @@ métodos HTTP:
  put = atualiza os dados
  delete = exclui os dados
 
+
+./ListagemDePessoas
 useSearchParams() = hook do react-router-dom para pesquisa no input
 
 searchParams.get('busca') ?? ''
 ?? = caso venha null, colocar a string vazia
+
+replace: true = significa que será adicionado ao histórico do nav a nova
+busca substituindo a entrada atual, em vez de adicionar uma nova entrada.
+
+useEffect() = é usado toda vez o que está dentro do [], é executado o 
+código sempre que é modificado, enquanto [] é executado apenas uma vez
+
+
+
+./UseDeBounce
+setTimeout() = dá um atraso para a ação que pode acontecer
+
+debounce = é uma técnica para limitar a frequência de chamandas a uma
+determinada função, muito usado após o usuário digitar antes de realizar
+uma busca ou executar uma ação relacionada
+
+useRef =
+
+useCallBack() = memoriza uma função e retorna uma versão memorizada
+sempre que as dependências fornecidas não mudarem
