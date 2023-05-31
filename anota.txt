@@ -42,6 +42,7 @@ textOverflow="ellipsis" -> aparece ... se o texto tiver muito grande
 Overflow="hidden" = impede que apareça barra de scroll
 
 /.BarraDeferramentas
+Paper = tras o componente pra frente
 Box pode assumir as propriedades do Paper, paper também aponta p/ o Box
 const theme = useTheme();
 <Box height={theme.spacing(4)} = define os espaços em valores de acordo
@@ -59,7 +60,7 @@ e depois coloca no return
 skeleton = usado para fornecer uma representação visual enquanto estão
 sendo carregados em forma geométrica. EX: facebook carregando
 
-para botões fazer uma interface booleana de visibilidade de cada botão e
+para botões, fazer uma interface booleana de visibilidade de cada botão e
 o clique de evento
 
 dropDown == splitButton
@@ -112,7 +113,8 @@ busca substituindo a entrada atual, em vez de adicionar uma nova entrada.
 useEffect() = é usado toda vez o que está dentro do [], é executado o 
 código sempre que é modificado, enquanto [] é executado apenas uma vez
 
-
+separar os imports de arquivos internos e externos. react é primeiro.
+Imports internos do maior para o menor para melhor organização visual
 
 ./UseDeBounce
 setTimeout() = dá um atraso para a ação que pode acontecer
