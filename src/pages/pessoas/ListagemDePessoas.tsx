@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { TableContainer, Table, TableHead, TableBody, TableRow, TableCell, Paper, TableFooter, LinearProgress, Pagination, IconButton, Icon } from '@mui/material';
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams, useNavigate } from 'react-router-dom';
 
 import { IListagemPessoa, PessoasService } from '../../shared/services/api/pessoas/PessoasService';
 import { FerramentasDaListagem } from '../../shared/components';
@@ -10,7 +10,8 @@ import { Environment } from '../../shared/environment';
 
 export const ListagemDePessoas: React.FC = () => {
   const [searchParams, setSearchParams] = useSearchParams();
-  const { debounce } = useDeBounce(1000);
+  const { debounce } = useDeBounce();
+  const navigate = useNavigate();
 
   const [rows, setRows] = useState<IListagemPessoa[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -45,6 +46,23 @@ export const ListagemDePessoas: React.FC = () => {
 
   }, [busca, pagina]);
 
+  const handleDelete = (id: number) => {
+
+    if (confirm('Realmente deseja apagar?')) {
+      PessoasService.deleteById(id)
+        .then(result => {
+          if (result instanceof Error) {
+            alert(result.message);
+          } else {
+            setRows(oldRows => [
+              ...oldRows.filter(oldRow => oldRow.id !== id),
+            ]);
+            alert('Registro apagado com sucesso');
+          }
+        });
+    }
+  };
+
   return (
     <LayoutBaseDePagina
       titulo='Listagem de pessoas'
@@ -69,10 +87,10 @@ export const ListagemDePessoas: React.FC = () => {
             {rows.map(row => {
               return (
                 <TableRow key={row.id}>
-                  <IconButton>
+                  <IconButton size="small" onClick={() => handleDelete(row.id)}>
                     <Icon>delete</Icon>
                   </IconButton>
-                  <IconButton>
+                  <IconButton size="small" onClick={() => navigate(`/pessoas/detalhe/${row.id}`)}>
                     <Icon>edit</Icon>
                   </IconButton>
                   <TableCell>{row.nomeCompleto}</TableCell>
