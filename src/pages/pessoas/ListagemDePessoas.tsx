@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { TableContainer, Table, TableHead, TableBody, TableRow, TableCell, Paper, TableFooter, LinearProgress, Pagination, IconButton, Icon } from '@mui/material';
 import { useSearchParams } from 'react-router-dom';
 
@@ -71,6 +71,8 @@ export const ListagemDePessoas: React.FC = () => {
                 <TableRow key={row.id}>
                   <IconButton>
                     <Icon>delete</Icon>
+                  </IconButton>
+                  <IconButton>
                     <Icon>edit</Icon>
                   </IconButton>
                   <TableCell>{row.nomeCompleto}</TableCell>
@@ -79,7 +81,7 @@ export const ListagemDePessoas: React.FC = () => {
               );
             })}
           </TableBody>
-          {totalCount === 0 && !isLoading &&(
+          {totalCount === 0 && !isLoading && (
             <caption>{Environment.LISTAGEM_VAZIA}</caption>
           )}
           <TableFooter>
@@ -93,7 +95,7 @@ export const ListagemDePessoas: React.FC = () => {
             {(totalCount > 0 && totalCount > Environment.LIMITE_DE_LINHAS) && (
               <TableRow>
                 <TableCell colSpan={3}>
-                  <Pagination 
+                  <Pagination
                     page={pagina}
                     count={Math.ceil(totalCount / Environment.LIMITE_DE_LINHAS)}
                     onChange={(e, newPage) => setSearchParams({ busca, pagina: newPage.toString() }, { replace: true })}

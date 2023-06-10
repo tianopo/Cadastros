@@ -1,3 +1,4 @@
+import React from 'react';
 import { FerramentasDaListagem, FerramentasDeDetalhe } from '../../shared/components';
 import { LayoutBaseDePagina } from '../../shared/layouts';
 
