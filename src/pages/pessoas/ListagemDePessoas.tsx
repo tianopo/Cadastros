@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
-import { TableContainer, Table, TableHead, TableBody, TableRow, TableCell, Paper, TableFooter, LinearProgress, Pagination } from '@mui/material';
+import { TableContainer, Table, TableHead, TableBody, TableRow, TableCell, Paper, TableFooter, LinearProgress, Pagination, IconButton, Icon } from '@mui/material';
 import { useSearchParams } from 'react-router-dom';
 
 import { IListagemPessoa, PessoasService } from '../../shared/services/api/pessoas/PessoasService';
@@ -69,7 +69,10 @@ export const ListagemDePessoas: React.FC = () => {
             {rows.map(row => {
               return (
                 <TableRow key={row.id}>
-                  <TableCell>Ações</TableCell>
+                  <IconButton>
+                    <Icon>delete</Icon>
+                    <Icon>edit</Icon>
+                  </IconButton>
                   <TableCell>{row.nomeCompleto}</TableCell>
                   <TableCell>{row.email}</TableCell>
                 </TableRow>
